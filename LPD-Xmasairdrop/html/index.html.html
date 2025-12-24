@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Airdrop Sounds</title>
+</head>
+<body>
+    <script>
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'playSound') {
+                const audio = new Audio(`sounds/${event.data.sound}.ogg`);
+                audio.volume = event.data.volume || 0.5;
+                audio.play().catch(err => {
+                    console.error('Error playing sound:', err);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
