@@ -10,13 +10,12 @@ A fully synchronized Christmas event system where Santa flies across the map in 
 
 - 🎄 **Automatic Midnight Trigger** - Event automatically starts at in-game midnight (configurable)
 - 🛷 **Santa's Sleigh** - A helicopter flies across the map following a customizable route
-- 🎁 **Giant Synced Presents** - Large present props that are fully synchronized across all players
+- 🎁 **Giant Synced Presents** - Large present props (PLEASE SET OWN PROP)
 - 🎲 **Randomized Loot** - Weighted loot pool system ensures different rewards every time
 - 📍 **Map Blips** - Present locations marked on the map
 - 🔔 **Sound Effects** - Optional sleigh bells and unwrapping sounds (requires sound files)
 - ⏱️ **Progress Bar** - Animated opening sequence using ox_lib
 - 🧹 **Auto-Cleanup** - Presents automatically despawn after configurable time
-- 👥 **Multi-Player Sync** - All players see presents in the same locations
 - 🎮 **Admin Commands** - Manual event triggering and time checking
 
 ## 📋 Dependencies
@@ -32,12 +31,13 @@ This script requires the following resources to be installed and running:
 1. **Download** the latest release or clone this repository
 2. **Extract** the folder to your server's `resources` directory
 3. **Rename** the folder to `LPD-Xmasairdrop` (or your preferred name)
-4. **Add** the following to your `server.cfg`:
+4. **Move** The Sleigh folder to where your vehicles are streamed (Optional)
+5. **Add** the following to your `server.cfg`:
    ```cfg
    ensure LPD-Xmasairdrop
    ```
-5. **Configure** the script in `config.lua` (see Configuration section below)
-6. **Restart** your server or use `/refresh` and `/start LPD-Xmasairdrop`
+6. **Configure** the script in `config.lua` (see Configuration section below)
+7. **Restart** your server or use `/refresh` and `/start LPD-Xmasairdrop`
 
 ## ⚙️ Configuration
 
@@ -102,33 +102,6 @@ Config.SleighRoute = {
     vector3(0.0, 0.0, 150.0),          -- Middle waypoint
     vector3(1000.0, 1000.0, 150.0),    -- End point
 }
-```
-
-## 🎵 Adding Sounds (Optional)
-
-1. **Create** the folder structure:
-   ```
-   LPD-Xmasairdrop/
-   └── html/
-       ├── index.html
-       └── sounds/
-           ├── sleigh_bells.ogg
-           └── unwrap_present.ogg
-   ```
-
-2. **Download** royalty-free Christmas sounds from:
-   - [Freesound.org](https://freesound.org/)
-   - [Zapsplat.com](https://www.zapsplat.com/)
-   - [Pixabay](https://pixabay.com/sound-effects/)
-
-3. **Convert** to `.ogg` format using [Audacity](https://www.audacityteam.org/) or online converters
-
-4. **Enable** sounds in config:
-   ```lua
-   Config.PlaySounds = true
-   ```
-
-5. The `html/index.html` file is already included in the repository
 
 ## 🎮 Commands
 
@@ -257,7 +230,6 @@ If you encounter any issues or have questions:
 ### Version 1.0.0 (Initial Release)
 - ✅ Automatic midnight event trigger
 - ✅ Flying sleigh with customizable route
-- ✅ Synchronized present drops
 - ✅ Randomized weighted loot system
 - ✅ Progress bar interactions
 - ✅ Map blips for presents
